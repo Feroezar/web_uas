@@ -8,7 +8,7 @@ body{
     transition: 1s;
 }
 .gg{
-    margin: 20px;
+    align-items: center;
 }
 /* a:active{
     background-size: 200px ;
