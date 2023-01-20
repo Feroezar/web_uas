@@ -97,7 +97,7 @@
                     <div class="mb-3 row">
                         <div class="col-md-4">Username :</div>
                         <div class="col-md">
-                            <input id="kmenu" class="form-control" type="text" placeholder="Menu" aria-label="default input example">
+                            <input id="kmenu" class="form-control" type="text" placeholder="Menu" aria-label="default input example" required>
                             <div id="x1" style="display: none;">Wajib Diisi</div>
                         </div>
                     </div>
@@ -106,10 +106,10 @@
                         <div class="col-md">
                         <div class="row">
                         <div class="col-md">            
-                          <input id="tpt" class="form-control" type="text" placeholder="Tempat" aria-label="default input example">
+                          <input id="tpt" class="form-control" type="text" placeholder="Tempat" aria-label="default input example" required>
                         </div>
                         <div class="col-md">
-                          <input id="dat" class="form-control" type="date" placeholder="Default input" aria-label="default input example">                        
+                          <input id="dat" class="form-control" type="date" placeholder="Default input" aria-label="default input example" required>                        
                         </div>
                       </div>
                       <div id="x2" style="display: none;">Wajib Diisi Tempat dan Tanggal</div>
@@ -118,25 +118,41 @@
                     <div class="mb-3 row">
                         <div class="col-md-4">Region Server :</div>
                         <div class="col-md">
-                            <select class="form-select" aria-label="" id="jm">
+                            <select class="form-select" aria-label="" id="jm" required>
                                 <option value="">---Select One---</option>
                                 <option value="Europe">Europe</option>
                                 <option value="Asia">Asia</option>
                                 <option value="Amerika">Amerika</option>
                                 <option value="Australia">Australia</option>
                             </select>
-                        </div>
+                            <div id="x3" style="display: none;">Wajib DiPilih</div>
+                        </div>                     
                     </div>
                     <div class="mb-3 row">
-                        <div class="col-md-4">Harga :</div>
-                        <div class="col-md">
-                            <input id="harga" class="form-control" type="text" placeholder="Harga" aria-describedby="default input example">
+                        <div class="col-md-4">Genre Game :</div>
+                        <div class="col-md" id="hobby">
+                          <input class="form-check-input" type="checkbox" value="Game" id="1a">
+                          <label class="form-check-label" for="flexCheckDefault">Game</label>
+                          <input class="form-check-input" type="checkbox" value="Tiduran" id="2a">
+                          <label class="form-check-label" for="flexCheckDefault">Tiduran</label>
+                          <input class="form-check-input" type="checkbox" value="Coding" id="3a">
+                          <label class="form-check-label" for="flexCheckDefault">Coding</label><br>
+                          <input class="form-check-input" type="checkbox" value="Gambar" id="4a">
+                          <label class="form-check-label" for="flexCheckDefault">Gambar</label>
+                          <input class="form-check-input" type="checkbox" value="Olahraga" id="5a">
+                          <label class="form-check-label" for="flexCheckDefault">Olahraga</label>
+                          <input class="form-check-input" type="checkbox" value="Lainnya" id="6a">
+                          <label class="form-check-label" for="flexCheckDefault">Lainnya</label>
+                          <div id="x4" style="display: none;">Wajib Dipilih Salah Satu</div>
                         </div>
                     </div>
                     <div  class="mb-3 row">
-                        <div class="col-md-4">Jumlah Beli :</div>
+                        <div class="col-md-4">Keterangan :</div>
                         <div class="col-md">
-                            <input type="number" id="jb" class="form-control" placeholder="Jumlah" aria-describedby="passwordHelpBlock">
+                          <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="ket" style="height: 100px" minlength="30" required></textarea>
+                            <label for="floatingTextarea2">Keterangan</label>
+                          </div>
                         </div>
                     </div> 
                     <div class="mb-3 row">
@@ -169,41 +185,38 @@
                     </div>
                 </div>
                 <div id="tampil" class="mb-3 row" style="display: none;">
-                        <div class="col-md">Invoice</div>
+                        <div class="col-md">Member Code</div>
+                        <div class="row">
                         <div class="col-md">
                             <input id="kode" class="form-control" type="text"  aria-label="" readonly disabled>
                         </div>
                         <div class="col-md-4"></div> 
-                       
+                      </div>
                     <table class="table table-borderless w-75 p-3" name="">
                         <thead>
                             <tr>
                                 <th scope="row">Username =</th>
-                                <td id="data1"></td>
+                                <td id="data1" class="w-75 p-3"></td>
                             </tr>
                             <tr>
-                                <th scope="row">Nama</th>
-                                <td id="data2"></td>
+                                <th scope="row">Date =</th>
+                                <td id="data2" class="w-75 p-3"></td>
                             </tr>
                             <tr>   
-                                <th scope="row">Jenis =</th>
-                                <td id="data3"></td>
+                                <th scope="row">Region Server =</th>
+                                <td id="data3" class="w-75 p-3"></td>
                             </tr>
                             <tr>
-                                <th scope="row">Jumlah Beli =</th>
-                                <td id="data4"></td>
+                                <th scope="row">Genre Game =</th>
+                                <td id="data4" class="w-75 p-3"></td>
                             </tr>                       
                             <tr>
-                                <th scope="row">Diskon =</th>
-                                <td id="data5"></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Total =</th>
-                                <td id="data6"></td>
+                                <th scope="row">Keterangan =</th>
+                                <td id="data5" class="w-75 p-3"></td>
                             </tr>
                             <tr>
                                 <th scope="row">Pembayaran =</th>
-                                <td id="data7"></td>
+                                <td id="data7" class="w-75 p-3"></td>
                             </tr>
                         </thead>
                         <tbody>

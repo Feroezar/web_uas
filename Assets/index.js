@@ -42,7 +42,8 @@ document.getElementById("kmenu").onkeyup = function(){
     let txtnama = document.getElementById("kmenu").value;
     let txtnama2 = txtnama.toLowerCase();
     document.getElementById("kmenu").value = txtnama2;
-};
+}
+
 document.getElementById('tpt').onkeyup = function (){
     let txtnama = document.getElementById('tpt').value;
     let txtnama2 = txtnama.toUpperCase();
@@ -51,25 +52,25 @@ document.getElementById('tpt').onkeyup = function (){
 
 document.getElementById("global1").onload = function(){
     let today = new Date();
-    let dd = String(today.getDate());
     let yy = today.getFullYear();
-    let tgl;
-
-    today = dd + yy;
-    tgl = document.getElementById('kode').value = "INV" + today + "001";
+    document.getElementById('kode').value = "INV" + yy + "001";
     pembayaran();
-};
+}
+
 document.getElementById("hilang").onclick = function(){
     document.getElementById("tampil").style = "display:none;";
 }
+
 document.getElementById("masuk").onclick = function(){
-    document.getElementById("tampil").style = "display:inline;";
     
     let menu = document.getElementById('kmenu').value;
         if(menu == "" || menu == null){
             document.getElementById("x1").style = "display:inline;";
+            document.getElementById("tampil").style = "display:none";
         }else{
+            document.getElementById("x1").style = "display:none;";
             document.getElementById('data1').innerHTML = menu;
+            document.getElementById("tampil").style = "display:inline;";
         }
 
     let tempat = document.getElementById('tpt').value;
@@ -77,16 +78,13 @@ document.getElementById("masuk").onclick = function(){
 
         if(tempat == "" || tempat == null || tanggal == "" || tanggal == null){
             document.getElementById("x2").style = "display:inline;";
+            document.getElementById("tampil").style = "display:none";
         }else{
             document.getElementById("x2").style = "display:none;";
             document.getElementById('data2').innerHTML = tempat+","+tanggal;
         }
-    
-
     combobox();
-    
-    let jb = document.getElementById('jb').value;
-
+    pilihan();
     let pembayaran = "";
         if(document.getElementById("Paypal").checked == true){
             pembayaran = "Paypal"}
@@ -95,15 +93,41 @@ document.getElementById("masuk").onclick = function(){
         if(pembayaran == ""){
             alert("wajib dipilih")
         }
-    let harga = document.getElementById('harga').value;
-    
-    total(jb,harga); 
-            
-    document.getElementById('data1').innerHTML = menu;
-    document.getElementById('data2').innerHTML = tempat+","+tanggal;
-    document.getElementById('data4').innerHTML = jb
+    keterangan();
+    // let ket = document.getElementById('ket').value;
+    // document.getElementById('data5').innerHTML = ket;
     document.getElementById('data7').innerHTML = pembayaran;
-    document.getElementById("harga").value = harga
+}
+function keterangan(){
+    let kalimat = document.getElementById('ket').value;
+    panjang = kalimat.length
+    if(panjang <30){
+        document.getElementById("tampil").style = "display:none";
+    }else{
+        document.getElementById('data5').innerHTML = kalimat;
+    }
+}
+function pilihan(){
+    let hobby1 ="", hobby2 = "", hobby3 = "", hobby4 = "", hobby5 = "", hobby6 = "";
+        if(document.getElementById("1a").checked == true)
+            hobby1 = "Game";
+        if(document.getElementById("2a").checked == true)
+            hobby2 = ", Tiduran";
+        if(document.getElementById("3a").checked == true)
+            hobby3 = ", Coding";
+        if(document.getElementById("4a").checked == true)
+            hobby4 = ", Gambar";
+        if(document.getElementById("5a").checked == true)
+            hobby5 = ", Olahraga";
+        if(document.getElementById("6a").checked == true)
+            hobby6 = ", Lainnya";
+        
+        let hobi = hobby1 + hobby2 + hobby3 + hobby4 + hobby5 + hobby6;       
+    if(hobi == "" || hobi == null){
+        document.getElementById("tampil").style = "display:none";
+    }else{
+        document.getElementById('data4').innerHTML = hobi;
+    }
 }
 
 function combobox(){
@@ -120,23 +144,9 @@ function combobox(){
         else if(jenis == "Australia"){
             document.getElementById('data3').innerHTML="Australia";
         }
-}
-
-function total(jb,harga){ 
-    let diskon;  
-    if(jb > 10){
-        diskon = document.getElementById('data5').innerHTML = "2%";
-    }else {
-        diskon = document.getElementById('data5').innerHTML = "0%";
-    } 
-    if(diskon == "2%"){
-        let first = (jb*harga)*2/100;
-        let sc = (jb*harga)-first;
-        document.getElementById('data6').innerHTML = sc;
-    }
-    else{
-        first = (jb*harga);
-        document.getElementById('data6').innerHTML = first;
+    if(jenis == "" || jenis == null){
+        document.getElementById("tampil").style = "display:none";
+        document.getElementById("x3").style = "display:inline;";
     }
 }
 
