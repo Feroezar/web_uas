@@ -57,8 +57,13 @@ document.getElementById("global1").onload = function(){
     pembayaran();
 }
 
-document.getElementById("hilang").onclick = function(){
+document.getElementById("hilang").onclick = function clear(){
     document.getElementById("tampil").style = "display:none;";
+    document.getElementById("x1").style = "display:none;";
+    document.getElementById("x2").style = "display:none;";
+    document.getElementById("x3").style = "display:none;";
+    document.getElementById("x4").style = "display:none;";
+    document.getElementById("x5").style = "display:none;"
 }
 
 document.getElementById("masuk").onclick = function(){
@@ -102,8 +107,10 @@ function keterangan(){
     let kalimat = document.getElementById('ket').value;
     panjang = kalimat.length
     if(panjang <30){
+        document.getElementById("x5").style = "display:inline;";
         document.getElementById("tampil").style = "display:none";
     }else{
+        document.getElementById("x5").style = "display:none;";
         document.getElementById('data5').innerHTML = kalimat;
     }
 }
@@ -124,8 +131,10 @@ function pilihan(){
         
         let hobi = hobby1 + hobby2 + hobby3 + hobby4 + hobby5 + hobby6;       
     if(hobi == "" || hobi == null){
+        document.getElementById("x4").style = "display:inline;";
         document.getElementById("tampil").style = "display:none";
     }else{
+        document.getElementById("x4").style = "display:none;";
         document.getElementById('data4').innerHTML = hobi;
     }
 }
