@@ -10,45 +10,43 @@ body{
 .gg{
     align-items: center;
 }
-/* a:active{
-    background-size: 200px ;
-} */
-.konten{
+button{
+    width: 200px;
+    padding: 15px 0;
     text-align: center;
-    margin-left: -20%;
-}
-.btnf{
-    border: 1px solid rgb(226, 226, 78);
-    background-color: none;
-    padding: 10px 20px;
-    font-size: 20px;
-    font-family: "monstserrat";
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #5a0096;
+    background: transparent;
+    color:#000f96;
     cursor: pointer;
-    margin: 10px;
-    transition: 0,7s;
     position: relative;
     overflow: hidden;
 }
-.btn1{
-    color:rgb(131, 41, 75);
-}
-.btn1:hover{
-    color: blue;
-}
-.btn::before{
-    content: "";
+span {
+    background: #960000;
+    height: 100%;
+    width: 0;
+    border-radius: 23px;
     position: absolute;
     left: 0;
-    width: 100%;
-    height: 0%;
-    background: rgb(255, 0, 0);
-    z-index: -1;
-    transition: 0,7s;
-}
-.btn1::before{
     bottom: 0;
-    border-radius:50% 50% 0 0;
+    z-index: -1;
+    transition: 0.5s;
 }
-.btn1:hover::before{
-    height: 100%;
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border-radius: none;
+}
+a {
+    color: #960057;
+}
+.content>h1{
+    color: #c505ff;
+}
+.n1{
+    text-decoration: none;
 }

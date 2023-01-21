@@ -38,7 +38,7 @@ function clear(){
 
                 // --------SiGNUP--------
 
-document.getElementById("kmenu").onkeyup = function(){
+document.getElementById("kmenu").onkeydown= function(){
     let txtnama = document.getElementById("kmenu").value;
     let txtnama2 = txtnama.toLowerCase();
     document.getElementById("kmenu").value = txtnama2;
@@ -70,7 +70,7 @@ document.getElementById("masuk").onclick = function(){
     
     let menu = document.getElementById('kmenu').value;
         if(menu == "" || menu == null){
-            document.getElementById("x1").style = "display:inline;";
+            document.getElementById("x1").style = "display:inline; background-color: red; color: aliceblue;";
             document.getElementById("tampil").style = "display:none";
         }else{
             document.getElementById("x1").style = "display:none;";
@@ -81,12 +81,13 @@ document.getElementById("masuk").onclick = function(){
     let tempat = document.getElementById('tpt').value;
     let tanggal = document.getElementById('dat').value;
 
-        if(tempat == "" || tempat == null || tanggal == "" || tanggal == null){
-            document.getElementById("x2").style = "display:inline;";
+        if(tempat == "" || tempat == null && tanggal == "" || tanggal == null){
+            document.getElementById("x2").style = "display:inline; background-color: red; color: aliceblue;";
             document.getElementById("tampil").style = "display:none";
         }else{
             document.getElementById("x2").style = "display:none;";
             document.getElementById('data2').innerHTML = tempat+","+tanggal;
+            document.getElementById("tampil").style = "display:inline;";
         }
     combobox();
     pilihan();
@@ -106,12 +107,13 @@ document.getElementById("masuk").onclick = function(){
 function keterangan(){
     let kalimat = document.getElementById('ket').value;
     panjang = kalimat.length
-    if(panjang <30){
-        document.getElementById("x5").style = "display:inline;";
+    if(panjang <= 30){
+        document.getElementById("x5").style = "display:inline; background-color: red; color: aliceblue;";
         document.getElementById("tampil").style = "display:none";
     }else{
         document.getElementById("x5").style = "display:none;";
         document.getElementById('data5').innerHTML = kalimat;
+        document.getElementById("tampil").style = "display:inline;";
     }
 }
 function pilihan(){
@@ -131,11 +133,12 @@ function pilihan(){
         
         let hobi = hobby1 + hobby2 + hobby3 + hobby4 + hobby5 + hobby6;       
     if(hobi == "" || hobi == null){
-        document.getElementById("x4").style = "display:inline;";
+        document.getElementById("x4").style = "display:inline; background-color: red; color: aliceblue;";
         document.getElementById("tampil").style = "display:none";
     }else{
         document.getElementById("x4").style = "display:none;";
         document.getElementById('data4').innerHTML = hobi;
+        document.getElementById("tampil").style = "display:inline;";
     }
 }
 
@@ -143,19 +146,23 @@ function combobox(){
     let jenis = document.getElementById('form1').jm.value;
         if(jenis ==  "Europe"){
             document.getElementById('data3').innerHTML="Europe";
+            document.getElementById("x3").style = "display:none;";
         }
         if(jenis == "Asia"){
             document.getElementById('data3').innerHTML="Asia";
+            document.getElementById("x3").style = "display:none;";
         }
         else if(jenis == "Amerika"){
             document.getElementById('data3').innerHTML="Amerika";
+            document.getElementById("x3").style = "display:none;";
         }
         else if(jenis == "Australia"){
             document.getElementById('data3').innerHTML="Australia";
+            document.getElementById("x3").style = "display:none;";
         }
     if(jenis == "" || jenis == null){
         document.getElementById("tampil").style = "display:none";
-        document.getElementById("x3").style = "display:inline;";
+        document.getElementById("x3").style = "display:inline; background-color: red; color: aliceblue;";
     }
 }
 
