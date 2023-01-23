@@ -81,7 +81,7 @@ document.getElementById("masuk").onclick = function(){
     let tempat = document.getElementById('tpt').value;
     let tanggal = document.getElementById('dat').value;
 
-        if(tempat == "" || tempat == null && tanggal == "" || tanggal == null){
+        if(tempat == "" || tempat == null || tanggal == "" || tanggal == null){
             document.getElementById("x2").style = "display:inline; background-color: red; color: aliceblue;";
             document.getElementById("tampil").style = "display:none";
         }else{
@@ -93,11 +93,15 @@ document.getElementById("masuk").onclick = function(){
     pilihan();
     let pembayaran = "";
         if(document.getElementById("Paypal").checked == true){
-            pembayaran = "Paypal"}
+            pembayaran = "Paypal"
+            document.getElementById("tampil").style = "display:inline;";
+        }
         if(document.getElementById("VISA").checked == true){
-            pembayaran = "VISA"}
-        if(pembayaran == ""){
-            alert("wajib dipilih")
+            pembayaran = "VISA"
+            document.getElementById("tampil").style = "display:inline;";
+        }
+        if(pembayaran == "" || pembayaran == null){
+            document.getElementById("tampil").style = "display:none";
         }
     keterangan();
     // let ket = document.getElementById('ket').value;
@@ -106,7 +110,7 @@ document.getElementById("masuk").onclick = function(){
 }
 function keterangan(){
     let kalimat = document.getElementById('ket').value;
-    panjang = kalimat.length
+    panjang = kalimat.length;
     if(panjang <= 30){
         document.getElementById("x5").style = "display:inline; background-color: red; color: aliceblue;";
         document.getElementById("tampil").style = "display:none";
