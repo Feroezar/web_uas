@@ -145,6 +145,22 @@ function pilihan(){
         document.getElementById("tampil").style = "display:inline;";
     }
 }
+document.getElementById('jm').onchange = function(){
+    let jenis = document.getElementById('form1').jm.value;
+        if(jenis ==  "Europe"){
+            alert("High Ping");
+        }
+        if(jenis == "Asia"){
+            alert("Medium Ping");
+        }
+        else if(jenis == "Amerika"){
+            alert("Low Ping");
+        }
+        else if(jenis == "Australia"){
+            alert("No Conection")
+        }
+}
+
 
 function combobox(){
     let jenis = document.getElementById('form1').jm.value;
@@ -174,7 +190,7 @@ function pembayaran(){
     let carabayar = ["Paypal","VISA"];
     let jenis = "";
     for (let i = 0; i <carabayar.length; i++){
-        jenis += '<input class="form-check-input" type="radio" name="flexRadioDefault" id="'+carabayar[i]+'" value="'+carabayar[i]+'" checked> <label class="form-check-label" for="flexRadioDefault2">'+carabayar[i]+'</label> <br>'
+        jenis += '<input class="form-check-input" type="radio" name="flexRadioDefault" id="'+carabayar[i]+'" value="'+carabayar[i]+'"> <label class="form-check-label" for="flexRadioDefault2">'+carabayar[i]+'</label> <br>'
     }
         document.getElementById('jenisbayar').innerHTML = jenis;
 }
