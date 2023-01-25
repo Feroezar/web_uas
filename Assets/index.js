@@ -53,17 +53,24 @@ document.getElementById('tpt').onkeyup = function (){
 document.getElementById("global1").onload = function(){
     let today = new Date();
     let yy = today.getFullYear();
-    document.getElementById('kode').value = "INV" + yy + "001";
+    document.getElementById('kode').value = "MB" + yy + "001";
     pembayaran();
 }
 
-document.getElementById("hilang").onclick = function clear(){
+document.getElementById("hilang").onclick = function(){
     document.getElementById("tampil").style = "display:none;";
     document.getElementById("x1").style = "display:none;";
     document.getElementById("x2").style = "display:none;";
     document.getElementById("x3").style = "display:none;";
     document.getElementById("x4").style = "display:none;";
     document.getElementById("x5").style = "display:none;"
+
+    // document.getElementById('data1').innerHTML = "";
+    // document.getElementById('data2').innerHTML = "";
+    // document.getElementById('data3').innerHTML = "";
+    // document.getElementById('data4').innerHTML = "";
+    // document.getElementById('data5').innerHTML = "";
+    // document.getElementById('data7').innerHTML = "";
 }
 
 document.getElementById("masuk").onclick = function(){
